@@ -147,6 +147,6 @@ PASSWORD_HASHERS = [
 # hashing passwords and not unsalted MD5. Unsalted MD5 is kept in the list so existing 
 # users can login and their passwords are then hashed again with PBKDF2.
 # PASSWORD_HASHERS = [
-#     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-#     'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',
+#    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+#    'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',
 # ]
