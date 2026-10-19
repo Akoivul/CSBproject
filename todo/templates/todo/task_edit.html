@@ -1,0 +1,10 @@
+<h1>Edit task</h1>
+<h2>{{ user.username }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Title <input type="text" name="title" value="{{ task.title }}" required></p>
+    <button type="submit">Save</button>
+</form>
+
+<a href="{% url 'todo:task_list' %}">Back</a>

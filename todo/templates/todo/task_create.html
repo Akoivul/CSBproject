@@ -1,0 +1,10 @@
+<h1>Add task</h1>
+<h2>{{ user.username }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Title <input type="text" name="title" required></p>
+    <button type="submit">Add</button>
+</form>
+
+<a href="{% url 'todo:task_list' %}">Back to tasks</a>

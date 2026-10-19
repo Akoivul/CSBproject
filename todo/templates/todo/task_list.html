@@ -1,0 +1,31 @@
+<h1>My Tasks</h1>
+<h2>{{ user.username }}</h2>
+
+{% for message in messages %}
+  <p>{{ message }}</p>
+{% endfor %}
+
+{% for task in tasks %}
+  <p>#{{ task.id }} {{ task.title }} -
+    <a href="{% url 'todo:task_edit' task.id %}">Edit</a> |
+    <a href="{% url 'todo:task_delete' task.id %}">Delete</a>
+  </p>
+{% endfor %}
+
+<p>
+  <a href="{% url 'todo:task_create' %}">Add task</a> |
+  {% if tasks is None %}
+    <a href="{% url 'todo:task_list' %}">All tasks</a> |
+  {% endif %}
+  <a href="{% url 'todo:logout' %}">Logout</a>
+</p>
+
+<h2>Search tasks</h2>
+<form method="get" action="{% url 'todo:task_search' %}">
+  <input type="text" name="q" placeholder="Search by title">
+  <button type="submit">Search</button>
+</form>
+
+{% for row in results %}
+  <p>{{ row.0 }} - {{ row.1 }}</p>
+{% endfor %}
