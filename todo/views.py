@@ -112,7 +112,7 @@ def task_search(request):
 
     # FLAW 3 (A03 Injection):
     # The query text is added to the end of the raw SQL query so the query can be changed with an injection.
-    # For example writing this: x' OR '1'='1' will show every user's tasks.
+    # For example writing this in the search bar will show every user's tasks: x' OR '1'='1' --
     with connection.cursor() as cursor:
         sql = "SELECT id, title FROM todo_task WHERE user_id = %s AND title LIKE '%%%s%%'" % (request.user.id, query)
         cursor.execute(sql)
