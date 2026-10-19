@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-8sn7pv92njwolsslqioeq=4vrr7x)zu0r!*d7-vmsddakxrg)c
 
 # FLAW 4 (A05 Security Misconfiguration):
 # DEBUG is set to True which means that if an unhandled error occurs, django's debug page
-# will open and show details like the stack trace and this file's settings.
+# will open and show source code and other details.
 DEBUG = True
 
 ALLOWED_HOSTS = []
